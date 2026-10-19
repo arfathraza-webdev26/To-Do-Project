@@ -1,10 +1,13 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
+import React from "react";
+import MainParent from "./MainParent";
+import "./global.css";
 
 function App() {
-  return <h1>To Do list app</h1>
+return (
+  <>
+  <MainParent/>
+  </>
+)
 }
 
 export default App
