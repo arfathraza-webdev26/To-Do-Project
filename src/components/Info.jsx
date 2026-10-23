@@ -9,8 +9,9 @@ const Info = () => {
         <div className='stones s3'><p>Pending</p> <span>4</span> </div>
       </div>
 
-      <div id='filter'><select name=''>
-        <option value="newest" selected>Newest First</option>
+      <div id='filter'>
+        <select name='' defaultValue="newest">
+        <option value="newest">Newest First</option>
         <option value="oldest">Oldest First</option>
         <option value="completed">Completed</option>
         <option value="pending">Pending</option>

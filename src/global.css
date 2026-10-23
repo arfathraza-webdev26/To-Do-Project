@@ -1,195 +1,813 @@
-*{
+
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+    font-family: system-ui, -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell,
+        'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
-body{
-    width: 100vw;
-    height:  100vh;
+html {
+    min-height: 100%;
+}
+
+body {
+    width: 100%;
+    min-height: 100vh;
     background-color: #F5F7FC;
 }
 
-#root{
+#root {
     width: 100%;
-    height: 100%;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
+    padding: 25px;
 }
 
-#mainParent{
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+#mainParent {
     width: 80%;
-    height: 90%;
+    max-width: 1200px;
+    min-height: 85vh;
+    height: auto;
     background-color: #f9fbfe;
     border-radius: 25px;
     box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.1);
+
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    flex-wrap: wrap;
     flex-direction: column;
+
+    padding: 15px 0 25px;
 }
 
+/* =========================
+   HEADER
+========================= */
 
-
-
-/* header insid the main parent consisting logo title and theme button */
-#header{
-    /* border:2px solid red; */
+#header {
     width: 95%;
-    height: 100px;
+    min-height: 70px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-
-}
-#header div{
-    /* border: 2px solid blue; */
-
-}
-#headName{
-    width: 80%;
-    height: 70px;
-
-}
-#headName span{
-    color:gray;
-}
-#headLogo, #theme{
-    width: 70px;
-    height: 70px;
+    gap: 15px;
+    margin: 10px 0;
 }
 
-#headLogo img{
+#headName {
+    flex: 1;
+    min-width: 0;
+}
+
+#headName span {
+    color: gray;
+}
+
+#headLogo,
+#theme {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+}
+
+#headLogo img {
     width: 100%;
     height: 100%;
-
+    object-fit: contain;
     mix-blend-mode: multiply;
 }
-#theme{
-    text-align: center;
-    font-size: 30px;
-    padding-top: 10px;}
 
-
-/* Adding CSS for the Task addition componet the text box and the add button */
-
-#addTask{
-    width: 95%;
-    height: 45px;
+#theme {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    /* border: 2px solid blue; */
+    font-size: 30px;
+    cursor: pointer;
 }
 
-#addTask input{
-    width: 90%;
-    height: 90%;
+/* =========================
+   ADD TASK FORM
+========================= */
+
+#addTask {
+    width: 95%;
+    min-height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: 12px;
+}
+
+#addTask input {
+    flex: 1;
+    width: 0;
+    min-width: 0;
+    min-height: 42px;
+
     border-radius: 10px;
     border: 1px solid #e1e6f0;
-    padding: 10px;
-    margin-right: 2%;
+    padding: 10px 14px;
+    background-color: white;
+    font-size: 15px;
 }
-.addButton{
+
+.addButton {
     background-color: #0093F6;
     width: 100px;
-    height: 90%;
+    min-height: 42px;
+    flex-shrink: 0;
+
     border-radius: 10px;
     border: none;
-    color: #ffffff;
-    font-size: large;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s;
 }
-.addButton:hover{
-    background-color:  #0069D5;
+
+.addButton:hover {
+    background-color: #0069D5;
 }
-#addTask input:focus{
+
+#addTask input:focus {
     outline: 2px solid #0093F6;
-    border: none;
+    border-color: transparent;
 }
 
+/* =========================
+   INFO STONES AND FILTER
+========================= */
 
-/* Adding CSS for the info stone components below input */
-
-#infoFilter{
+#infoFilter {
     width: 95%;
-    height: 50px;
-    /* border: 2px solid blue; */
+    min-height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 10px;
+    gap: 15px;
+    margin-top: 15px;
 }
-#infoStones{
-    width: 50%;
-    height: 100%;
 
-}
-#filter{
-    width: 20%;
-    height: 100%;
-}
-#infoStones, #filter{
-    /* border: 2px solid red; */
+#infoStones {
+    flex: 1;
+    min-width: 0;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+#filter {
+    width: 190px;
+    flex-shrink: 0;
+    min-height: 45px;
+
+    display: flex;
+    justify-content: flex-end;
     align-items: center;
 }
-.stones{
-height: 80%;
-padding: 0px 30px 5px 30px;
-justify-content: space-evenly;
-align-items: center;
-display: flex; 
-border-radius: 30px;
-font-weight: 500;
+
+.stones {
+    min-height: 38px;
+    padding: 6px 16px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 5px;
+    border-radius: 30px;
+    font-weight: 500;
+    white-space: nowrap;
 }
 
-.s1{
+.s1 {
     background-color: #0093F6;
-    color : white;
+    color: white;
 }
-.s2{
-    background-color:#e4f4ee ;
-    color:#1c9e61
+
+.s2 {
+    background-color: #e4f4ee;
+    color: #1c9e61;
 }
-.s3{
+
+.s3 {
     background-color: #e9ebf1;
-    color:#3b435c
+    color: #3b435c;
 }
 
-.stones p{
-    margin-right: 10px;
-    
+.stones p {
+    margin-right: 5px;
 }
 
-.s2 span{
-    text-align: center;
+.s2 span,
+.s3 span {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 20px;
+    min-height: 20px;
+    padding: 0 4px;
+    border-radius: 10px;
+}
+
+.s2 span {
     background-color: #8bf8c5aa;
-    width: 20px;
-    border-radius: 10px;
-}
-.s3 span{
-    text-align: center;
-    background-color:#c7d1ed  ;
-    width: 20px;
-    border-radius: 10px;
 }
 
-#filter select{
+.s3 span {
+    background-color: #c7d1ed;
+}
 
-    width: 90%;
-    height: 90%;
+#filter select {
+    width: 100%;
+    min-height: 42px;
     border-radius: 10px;
-    padding: 0px 20px 0px 20px;
-    font-size: large;
+    padding: 0 12px;
+    font-size: 15px;
     font-weight: 500;
     border: 1px solid #e1e6f0;
     outline: none;
-
+    background-color: white;
+    cursor: pointer;
 }
 
+#filter select:focus {
+    border-color: #0093F6;
+}
+
+/* =========================
+   TASK DISPLAY
+========================= */
+
+#taskDisplay {
+    background-color: white;
+    width: 95%;
+    flex: 1;
+    min-height: 250px;
+    margin-top: 15px;
+
+    border: 1px solid #e1e6f0;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.05);
+
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+#progressInfo {
+    width: 95%;
+    min-height: 50px;
+    background-color: #edf1fb;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px;
+
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e1e6f0;
+    border-top: none;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 1024px) {
+    #root {
+        padding: 20px;
+    }
+
+    #mainParent {
+        width: 95%;
+        min-height: 90vh;
+    }
+
+    #infoFilter {
+        align-items: stretch;
+    }
+
+    #filter {
+        width: 160px;
+    }
+
+    .stones {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+}
+
+/* =========================
+   MOBILE DEVICES
+========================= */
+
+@media (max-width: 600px) {
+    #root {
+        min-height: 100vh;
+        padding: 10px;
+        align-items: flex-start;
+    }
+
+    #mainParent {
+        width: 100%;
+        min-height: calc(100vh - 20px);
+        border-radius: 16px;
+        padding: 10px 0 15px;
+    }
+
+    #header {
+        width: 92%;
+        min-height: 60px;
+        gap: 10px;
+        margin: 5px 0 15px;
+    }
+
+    #headLogo,
+    #theme {
+        width: 45px;
+        height: 45px;
+    }
+
+    #headName {
+        font-size: 14px;
+    }
+
+    #theme {
+        font-size: 25px;
+    }
+
+    #addTask {
+        width: 92%;
+        gap: 8px;
+    }
+
+    #addTask input {
+        width: 0;
+        min-width: 0;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    .addButton {
+        width: 75px;
+        font-size: 14px;
+    }
+
+    #infoFilter {
+        width: 92%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 12px;
+    }
+
+    #infoStones {
+        width: 100%;
+        justify-content: space-between;
+        gap: 6px;
+    }
+
+    .stones {
+        flex: 1;
+        min-width: 0;
+        padding: 7px 8px;
+        font-size: 12px;
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .stones p {
+        margin-right: 0;
+    }
+
+    #filter {
+        width: 100%;
+        min-height: 42px;
+    }
+
+    #filter select {
+        font-size: 14px;
+    }
+
+    #taskDisplay {
+        width: 92%;
+        min-height: 300px;
+        margin-top: 15px;
+        border-radius: 15px 15px 0 0;
+    }
+
+    #progressInfo {
+        width: 92%;
+        font-size: 13px;
+        border-radius: 0 0 15px 15px;
+    }
+}
+
+/* =========================
+   VERY SMALL MOBILE DEVICES
+========================= */
+
+@media (max-width: 360px) {
+    #root {
+        padding: 6px;
+    }
+
+    #mainParent {
+        border-radius: 12px;
+    }
+
+    #headLogo,
+    #theme {
+        width: 38px;
+        height: 38px;
+    }
+
+    #headName {
+        font-size: 12px;
+    }
+
+    .stones {
+        padding: 7px 4px;
+        font-size: 11px;
+    }
+
+    .stones span {
+        min-width: 17px;
+    }
+
+    .addButton {
+        width: 65px;
+        font-size: 12px;
+    }
+}
+
+
+
+/* CSS for the Login Page */
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+#login {
+    width: 90%;
+    max-width: 420px;
+    padding: 35px;
+    background-color: #f9fbfe;
+
+    border: 1px solid #e1e6f0;
+    border-radius: 25px;
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    margin: auto;
+}
+
+/* Labels */
+
+#login label {
+    color: #3b435c;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Text and password inputs */
+
+#login input {
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+
+    padding: 0 14px;
+    font-size: 15px;
+    color: #3b435c;
+
+    background-color: #ffffff;
+    border: 1px solid #e1e6f0;
+    border-radius: 10px;
+
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#login input::placeholder {
+    color: #9aa3b5;
+}
+
+#login input:focus {
+    border-color: #0093F6;
+    box-shadow: 0 0 0 3px rgba(0, 147, 246, 0.12);
+}
+
+/* Buttons */
+
+#login button {
+    width: 100%;
+    min-height: 44px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Login button */
+
+#login button:first-of-type {
+    margin-top: 12px;
+    background-color: #0093F6;
+    color: #ffffff;
+}
+
+#login button:first-of-type:hover {
+    background-color: #0069D5;
+}
+
+#login button:first-of-type:active {
+    transform: scale(0.98);
+}
+
+/* Reset button */
+
+#login button:nth-of-type(2) {
+    background-color: #e9ebf1;
+    color: #3b435c;
+}
+
+#login button:nth-of-type(2):hover {
+    background-color: #dce1eb;
+}
+
+/* Signup link */
+
+#login a {
+    margin-top: 8px;
+    text-align: center;
+
+    color: #0093F6;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+#login a:hover {
+    color: #0069D5;
+    text-decoration: underline;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 768px) {
+    #login {
+        max-width: 400px;
+        padding: 30px;
+        border-radius: 20px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+    #login {
+        width: 100%;
+        max-width: 380px;
+        padding: 25px 20px;
+        border-radius: 18px;
+        gap: 10px;
+    }
+
+    #login label {
+        font-size: 13px;
+    }
+
+    #login input {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    #login button {
+        min-height: 43px;
+        font-size: 14px;
+    }
+
+    #login a {
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 320px) {
+    #login {
+        padding: 20px 15px;
+    }
+}
+
+
+/* CSS for Signup Page */
+
+/* =========================
+   SIGNUP PAGE
+========================= */
+
+#signupPage {
+    width: 90%;
+    max-width: 420px;
+    padding: 35px;
+
+    background-color: #f9fbfe;
+    border: 1px solid #e1e6f0;
+    border-radius: 25px;
+    box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.08);
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+
+    margin: auto;
+}
+
+/* Labels */
+
+#signupPage label {
+    color: #3b435c;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 5px;
+}
+
+/* Inputs */
+
+#signupPage input {
+    width: 100%;
+    min-width: 0;
+    height: 46px;
+
+    padding: 0 14px;
+    font-size: 15px;
+    color: #3b435c;
+
+    background-color: #ffffff;
+    border: 1px solid #e1e6f0;
+    border-radius: 10px;
+
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+#signupPage input::placeholder {
+    color: #9aa3b5;
+}
+
+#signupPage input:focus {
+    border-color: #0093F6;
+    box-shadow: 0 0 0 3px rgba(0, 147, 246, 0.12);
+}
+
+/* Buttons */
+
+#signupPage button {
+    width: 100%;
+    min-height: 44px;
+
+    border: none;
+    border-radius: 10px;
+
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+/* Signup button */
+
+#signupPage button:first-of-type {
+    margin-top: 12px;
+    background-color: #0093F6;
+    color: #ffffff;
+}
+
+#signupPage button:first-of-type:hover {
+    background-color: #0069D5;
+}
+
+#signupPage button:first-of-type:active {
+    transform: scale(0.98);
+}
+
+/* Reset button */
+
+#signupPage button:nth-of-type(2) {
+    background-color: #e9ebf1;
+    color: #3b435c;
+}
+
+#signupPage button:nth-of-type(2):hover {
+    background-color: #dce1eb;
+}
+
+/* Login link */
+
+#signupPage a {
+    margin-top: 8px;
+    text-align: center;
+
+    color: #0093F6;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+
+    transition: color 0.2s;
+}
+
+#signupPage a:hover {
+    color: #0069D5;
+    text-decoration: underline;
+}
+
+/* =========================
+   TABLETS
+========================= */
+
+@media (max-width: 768px) {
+    #signupPage {
+        max-width: 400px;
+        padding: 30px;
+        border-radius: 20px;
+    }
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 480px) {
+    #signupPage {
+        width: 100%;
+        max-width: 380px;
+        padding: 25px 20px;
+        border-radius: 18px;
+        gap: 10px;
+    }
+
+    #signupPage label {
+        font-size: 13px;
+    }
+
+    #signupPage input {
+        height: 44px;
+        font-size: 14px;
+    }
+
+    #signupPage button {
+        min-height: 43px;
+        font-size: 14px;
+    }
+
+    #signupPage a {
+        font-size: 13px;
+    }
+}
+
+/* =========================
+   VERY SMALL MOBILE
+========================= */
+
+@media (max-width: 320px) {
+    #signupPage {
+        padding: 20px 15px;
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "username": "arfath",
+      "email": "arfathrazas@gmail.com",
+      "password": "12345678",
+      "id": "k-gcOB7iIh0"
+    },
+    {
+      "username": "raza07",
+      "email": "webky@host.in",
+      "password": "8989098",
+      "id": "eU3z-yAVOaA"
+    },
+    {
+      "username": "famidabanu",
+      "email": "famida@gmailcom",
+      "password": "famidabanu",
+      "id": "bLrMYLe-nE4"
+    }
+  ],
+  "tasks": [],
+  "$schema": "./node_modules/json-server/schema.json"
+}
