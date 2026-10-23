@@ -9,7 +9,7 @@ const Info = () => {
         <div className='stones s3'><p>Pending</p> <span>4</span> </div>
       </div>
 
-<<<<<<< HEAD
+ 
       <div id='filter'>
         <select name='' defaultValue="newest">
         <option value="newest">Newest First</option>
@@ -17,9 +17,9 @@ const Info = () => {
         <option value="completed">Completed</option>
         <option value="pending">Pending</option>
         </select></div>
-=======
+ 
       <div id='filter'></div>
->>>>>>> 4319811773aed4a45c723b2dc2f6a3661fdb7e46
+ 
     </div>
   )
 }
