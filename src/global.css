@@ -37,9 +37,13 @@ body {
 
 #mainParent {
     width: 80%;
+<<<<<<< HEAD
     max-width: 1200px;
     min-height: 85vh;
     height: auto;
+=======
+    height: 90%;
+>>>>>>> 4319811773aed4a45c723b2dc2f6a3661fdb7e46
     background-color: #f9fbfe;
     border-radius: 25px;
     box-shadow: 0 0 50px 1px rgba(0, 0, 0, 0.1);
@@ -47,9 +51,14 @@ body {
     display: flex;
     align-items: center;
     justify-content: flex-start;
+<<<<<<< HEAD
     flex-direction: column;
 
     padding: 15px 0 25px;
+=======
+    flex-wrap: wrap;
+    flex-direction: column;
+>>>>>>> 4319811773aed4a45c723b2dc2f6a3661fdb7e46
 }
 
 /* =========================
@@ -85,7 +94,11 @@ body {
 #headLogo img {
     width: 100%;
     height: 100%;
+<<<<<<< HEAD
     object-fit: contain;
+=======
+
+>>>>>>> 4319811773aed4a45c723b2dc2f6a3661fdb7e46
     mix-blend-mode: multiply;
 }
 
@@ -94,7 +107,115 @@ body {
     justify-content: center;
     align-items: center;
     font-size: 30px;
+<<<<<<< HEAD
     cursor: pointer;
+=======
+    padding-top: 10px;}
+
+
+/* Adding CSS for the Task addition componet the text box and the add button */
+
+#addTask{
+    width: 95%;
+    height: 45px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* border: 2px solid blue; */
+}
+
+#addTask input{
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    border: 1px solid #e1e6f0;
+    padding: 10px;
+    margin-right: 2%;
+}
+.addButton{
+    background-color: #0093F6;
+    width: 100px;
+    height: 90%;
+    border-radius: 10px;
+    border: none;
+    color: #ffffff;
+    font-size: large;
+}
+.addButton:hover{
+    background-color:  #0069D5;
+}
+#addTask input:focus{
+    outline: 2px solid #0093F6;
+    border: none;
+}
+
+
+/* Adding CSS for the info stone components below input */
+
+#infoFilter{
+    width: 95%;
+    height: 50px;
+    /* border: 2px solid blue; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+#infoStones{
+    width: 50%;
+    height: 100%;
+
+}
+#filter{
+    width: 20%;
+    height: 100%;
+}
+#infoStones, #filter{
+    border: 2px solid red;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.stones{
+height: 80%;
+padding: 0px 30px 5px 30px;
+justify-content: space-evenly;
+align-items: center;
+display: flex; 
+border-radius: 30px;
+font-weight: 500;
+}
+
+.s1{
+    background-color: #0093F6;
+    color : white;
+}
+.s2{
+    background-color:#e4f4ee ;
+    color:#1c9e61
+}
+.s3{
+    background-color: #e9ebf1;
+    color:#3b435c
+}
+
+.stones p{
+    margin-right: 10px;
+    
+}
+
+.s2 span{
+    text-align: center;
+    background-color: #8bf8c5aa;
+    width: 20px;
+    border-radius: 10px;
+}
+.s3 span{
+    text-align: center;
+    background-color:#c7d1ed  ;
+    width: 20px;
+    border-radius: 10px;
+>>>>>>> 4319811773aed4a45c723b2dc2f6a3661fdb7e46
 }
 
 /* =========================
